@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ToDoMauiClient.MainPage">
+             x:Class="ToDoMauiClient.MainPage"
+             Title="My To Dos">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add to do" Clicked="OnAddToDoClicked" />
+        <ToolbarItem Text="Menu" Clicked="OnAddToDoClicked" />
+        <ToolbarItem Text="Options" Clicked="OnAddToDoClicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="collectionView"

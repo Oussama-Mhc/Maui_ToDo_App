@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ToDoMauiClient.DataServices;
+using ToDoMauiClient.Pages;
 
 namespace ToDoMauiClient;
 
@@ -16,9 +17,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		//Dependency Injection
 		builder.Services.AddSingleton<IRestDataService, RestDataService>();
 
 		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddTransient<ManageToDoPage>();
 
 		return builder.Build();
 	}
