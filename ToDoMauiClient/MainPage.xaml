@@ -6,8 +6,6 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add to do" Clicked="OnAddToDoClicked" />
-        <ToolbarItem Text="Menu" Clicked="OnAddToDoClicked" />
-        <ToolbarItem Text="Options" Clicked="OnAddToDoClicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="collectionView"
