@@ -11,13 +11,14 @@ public partial class ManageToDoPage : ContentPage
 
 	bool _isNew;
 	ToDo _toDo;
-	public ToDo toDo 
+	public ToDo ToDo 
 	{
 		get => _toDo;
 		set
 		{
 			_isNew = IsNew(value);
 			_toDo= value;
+			//this is required to update an existing item
 			OnPropertyChanged();
         }
 	}
@@ -41,19 +42,19 @@ public partial class ManageToDoPage : ContentPage
 		if (_isNew)
 		{
 			Debug.WriteLine("ToDo item Added.");
-            await _dataService.AddToDoAsync(toDo);
+            await _dataService.AddToDoAsync(ToDo);
         }
         else
 		{
             Debug.WriteLine("ToDo item Updated."); 
-			await _dataService.UpdateToDoAsync(toDo);
+			await _dataService.UpdateToDoAsync(ToDo);
         }
         await Shell.Current.GoToAsync("..");
     }
 
 	async void OnDeleteButtonClicked(object sender,EventArgs e)
 	{
-		await _dataService.RemoveToDoAsync(toDo.Id);
+		await _dataService.RemoveToDoAsync(ToDo.Id);
 		await Shell.Current.GoToAsync("..");
 	}
 
